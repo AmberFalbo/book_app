@@ -6,16 +6,16 @@ Estimate of time needed to complete: 1hr
 
 Start time: 2:10pm
 
-Finish time: _____
+Finish time: 3:17pm
 
-Actual time needed to complete: _____
+Actual time needed to complete: 77minutes
 
 
 Number and name of feature: #2 Searching Google Books API
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 45min
 
-Start time: _____
+Start time: 3:18pm
 
 Finish time: _____
 
