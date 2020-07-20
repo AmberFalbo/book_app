@@ -17,11 +17,17 @@ const PORT = process.env.PORT || 3001;
 app.use(express.static('./public'));
 app.use(express.urlencoded({extended: true}));
 
-app.get('/hello', renderTest);
+// app.get('/hello', renderTest);
+app.get('/searches/new', renderSearchPage);
 
-function renderTest(request, response){
-  response.render('pages/index');
+// functions
+function renderSearchPage(request, response){
+  response.render('pages/searches/new.ejs')
 }
+
+// function renderTest(request, response){
+//   response.render('pages/index');
+// }
 
 app.listen(PORT, () => {
   console.log(`listening on ${PORT}`);
