@@ -50,16 +50,16 @@ Estimate of time needed to complete: 45 minutes
 
 Start time: 6:32pm
 
-Finish time: _____
+Finish time: 7:32pm
 
-Actual time needed to complete: _____
+Actual time needed to complete: 1hr
 
 
 Number and name of feature: #6 Homepage
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 10 minutes
 
-Start time: _____
+Start time: 7:33pm
 
 Finish time: _____
 
