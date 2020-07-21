@@ -4,6 +4,7 @@ const express = require('express');
 const app = express();
 
 require('dotenv').config();
+const pg = require('pg');
 require('ejs');
 const superagent = require('superagent');
 
@@ -13,24 +14,32 @@ app.set('view engine', 'ejs');
 // global variables
 const PORT = process.env.PORT || 3001;
 
+const client = new pg.Client(process.env.DATABASE_URL);
+client.on('error', error => {
+  console.log('ERROR', error);
+});
+
 // middleware
 app.use(express.static('./public'));
 app.use(express.urlencoded({extended: true}));
+app.set('view engine', 'ejs'); 
 
-// app.get('/hello', renderTest);
+
 app.get('/', renderHomePage);
 app.get('/searches/new', renderSearchPage);
 app.post('/searches', collectSearchResults);
 app.get('/error', handleErrors);
 
+
 // functions
 
-// function renderTest(request, response){
-//   response.render('pages/index');
-// }
-
 function renderHomePage(request, response){
-  response.render('pages/index.ejs')
+  let sql = 'SELECT * FROM books;';
+  client.query(sql)
+    .then(results => {
+      let books = results.rows;
+      response.render('pages/index.ejs', {saved: books});
+    })
 }
 
 function renderSearchPage(request, response){
@@ -77,7 +86,10 @@ function Book(obj){
   this.image = obj.imageLinks ? obj.imageLinks.thumbnail.replace(/^(http:\/\/)/g, 'https://') : 'https://i.imgur.com/J5LVHEL.jpg';
 }
 
+client.connect()
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log(`listening on ${PORT}`);
+    })
+  });
 
-app.listen(PORT, () => {
-  console.log(`listening on ${PORT}`);
-});

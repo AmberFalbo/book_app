@@ -1,7 +1,7 @@
 main{
   display: flex;
   flex-direction: column;
-  width: 480px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -10,17 +10,33 @@ main{
  height: 600px;
 }
 
-#results{
-  
+.main-page{
+  background-color: gray;
+  padding: 40px 20px;
 }
 
-h2{
+.book-container{
+  background-color: rgb(184, 181, 181);
+  padding: 20px;
+  border: solid 1px rgb(164, 163, 167);
+  box-shadow: 0px 5px 5px rgba(0,0,0,0.5);
+  margin-bottom: 50px;
+}
+
+.book-image{
+  width: 50%;
+  display: block;
+  margin: 0 auto 20px auto;
+  border: white 10px solid;
+}
+
+.book-title{
   flex: 1;
   text-align: center;
   font-size: 2em;
 }
 
-h3{
+.book-author{
   flex: 1;
   text-align: center;
   font-style: italic;
@@ -39,13 +55,6 @@ p{
   margin: 10px 30px;
 }
 
-img{
-  width: 50%;
-  flex: 3;
-  padding-left: 25%;
-  padding-right: 25%;
-  margin: 40px 0 20px 0;
-}
 
 fieldset, #textBox, button{
   width: 80%;

@@ -1,5 +1,7 @@
 # book_app
 
+Day 1
+
 Number and name of feature: #1 Setup 
 
 Estimate of time needed to complete: 1hr
@@ -61,16 +63,18 @@ Estimate of time needed to complete: 10 minutes
 
 Start time: 7:33pm
 
-Finish time: _____
+Finish time: 7:38
 
-Actual time needed to complete: _____
+Actual time needed to complete: 5 minutes
 
 
-Number and name of feature: ________________________________
+Day 2
 
-Estimate of time needed to complete: _____
+Number and name of feature: #1 Saved Books on Homepage
 
-Start time: _____
+Estimate of time needed to complete: 1hr
+
+Start time: 2:10pm
 
 Finish time: _____
 
