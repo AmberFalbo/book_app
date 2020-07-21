@@ -20,6 +20,7 @@ app.use(express.urlencoded({extended: true}));
 // app.get('/hello', renderTest);
 app.get('/searches/new', renderSearchPage);
 app.post('/searches', collectSearchResults);
+app.get('/error', handleErrors);
 
 // functions
 
@@ -50,11 +51,17 @@ function collectSearchResults(request, response){
       });
 
       response.render('pages/searches/show.ejs', {searchResults: finalBookArray})
-    })
+    }).catch((error) => {
+      console.log('ERROR', error);
+      response.status(500).send('Sorry this is broken for a bit!');
+      handleErrors(request, response);
+    });
 
 }
 
-
+function handleErrors(request, response){
+  response.render('pages/error.ejs')
+}
 
 
 
