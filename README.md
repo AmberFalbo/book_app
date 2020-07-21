@@ -28,16 +28,16 @@ Estimate of time needed to complete: 1hr
 
 Start time: 3:42pm
 
-Finish time: _____
+Finish time: 6:09pm
 
-Actual time needed to complete: _____
+Actual time needed to complete: 2hrs 12 minutes, 15 minute break included
 
 
 Number and name of feature: #4 Error Messages 
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 10 minutes
 
-Start time: _____
+Start time: 6:11pm
 
 Finish time: _____
 
