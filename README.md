@@ -39,16 +39,16 @@ Estimate of time needed to complete: 10 minutes
 
 Start time: 6:11pm
 
-Finish time: _____
+Finish time: 6:31pm
 
-Actual time needed to complete: _____
+Actual time needed to complete: 20 minutes
 
 
 Number and name of feature: #5 Create Simple UI
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 45 minutes
 
-Start time: _____
+Start time: 6:32pm
 
 Finish time: _____
 

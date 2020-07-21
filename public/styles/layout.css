@@ -1,0 +1,87 @@
+main{
+  display: flex;
+  flex-direction: column;
+  width: 480px;
+  margin: 0 auto;
+}
+
+#form{
+ width: 400px;
+ height: 600px;
+}
+
+#results{
+  
+}
+
+h2{
+  flex: 1;
+  text-align: center;
+  font-size: 2em;
+}
+
+h3{
+  flex: 1;
+  text-align: center;
+  font-style: italic;
+  margin: 10px 0px;
+}
+
+h4{
+  margin-top: 30px;
+  text-align: center;
+  font-size: 2em;
+}
+
+p{
+  flex: 1;
+  margin-bottom: 30px;
+  margin: 10px 30px;
+}
+
+img{
+  width: 50%;
+  flex: 3;
+  padding-left: 25%;
+  padding-right: 25%;
+  margin: 40px 0 20px 0;
+}
+
+fieldset, #textBox, button{
+  width: 80%;
+  height: 60px;
+  margin: 10px 10%;
+}
+
+span{
+  font-size: 20px;
+}
+
+
+
+
+/* <main id=form>
+    <h4>Search by Title or Author</h4>
+    <form action="/searches" method="post">
+      <input type="text" name="search" placeholder="Enter a title or author" required>
+      <fieldset>
+        <label for="title">
+          <span>Title</span>
+          <input type="radio" name="search" value="title" required>
+        </label>
+      </fieldset>
+      <fieldset>
+        <label for="author">
+          <span>Author</span>
+          <input type="radio" name="search" value="author" required>
+        </label>
+      </fieldset>
+      <button type="submit">Search the Google Books API</button>
+    </form>
+  </main> */
+
+@media only screen and (min-width:768px){
+
+
+
+}
