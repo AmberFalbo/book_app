@@ -3,13 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/styles/reset.css" rel="stylesheet"/>
+  <link href="/styles/base.css" rel="stylesheet"/>
+  <link href="/styles/layout.css" rel="stylesheet"/>
+  <link href="/styles/modules.css" rel="stylesheet"/>
   <title>Book Collection</title>
 </head>
 <body>
-  <main>
+  <main id=form>
     <h4>Search by Title or Author</h4>
     <form action="/searches" method="post">
-      <input type="text" name="search" placeholder="Enter a title or author" required>
+      <input id=textBox type="text" name="search" placeholder="Enter a title or author" required>
       <fieldset>
         <label for="title">
           <span>Title</span>
