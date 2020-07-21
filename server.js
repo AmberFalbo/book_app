@@ -18,6 +18,7 @@ app.use(express.static('./public'));
 app.use(express.urlencoded({extended: true}));
 
 // app.get('/hello', renderTest);
+app.get('/', renderHomePage);
 app.get('/searches/new', renderSearchPage);
 app.post('/searches', collectSearchResults);
 app.get('/error', handleErrors);
@@ -27,6 +28,10 @@ app.get('/error', handleErrors);
 // function renderTest(request, response){
 //   response.render('pages/index');
 // }
+
+function renderHomePage(request, response){
+  response.render('pages/index.ejs')
+}
 
 function renderSearchPage(request, response){
   response.render('pages/searches/new.ejs')
