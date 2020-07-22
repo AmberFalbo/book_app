@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="/styles/reset.css" rel="stylesheet"/>
-  <link href="/styles/base.css" rel="stylesheet"/>
-  <link href="/styles/layout.css" rel="stylesheet"/>
-  <link href="/styles/modules.css" rel="stylesheet"/>
-  <title>Book Collection</title>
+  <%- include('../../layout/head') %>
 </head>
 <body>
+  <main> 
+    <%- include('../../layout/header') %>
   <section class="main-page">
     <% searchResults.forEach( book => { %>
       <%- include('../books/detail.ejs', {book:book}) %>
-
+      
       <form action="/addbook" method="POST">
         <input type="hidden" name="title" value="<%= book.title %>" />
         <input type="hidden" name="author" value="<%= book.author %>" />
@@ -25,6 +21,6 @@
       </form>
     <% }) %>
     </section>
-  
+  </main>
 </body>
 </html>
