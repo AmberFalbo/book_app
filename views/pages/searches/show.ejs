@@ -18,7 +18,16 @@
         <h3 class="book-author" ><%= book.author %></h3>
         <p><%= book.description %></p>
       </div>
-   <% }) %>
+
+      <form action="/addbook" method="POST">
+        <input type="hidden" name="title" value="<%= book.title %>" />
+        <input type="hidden" name="author" value="<%= book.author %>" />
+        <input type="hidden" name="description" value="<%= book.description %>" />
+        <input type="hidden" name="image" value="<%= book.image %>" />
+
+        <button type="submit">Add to favorites</button>
+      </form>
+    <% }) %>
     </section>
   
 </body>
