@@ -1,10 +1,9 @@
 
-  <section id=results>
-    <img src="<%= bookSelection.image_url %>"/>
-    <h2><%= bookSelection.title %></h2>
-    <h3><%= bookSelection.author %></h3>
-    <p><%= bookSelection.description %></p>
-    <p>ISBN: <%= bookSelection.isbn %></p>
-    <p>Bookshelf: <%= bookSelection.bookshelf %></p>    
+  <section class="detail-partial">
+    <div class="book-container">
+      <img class="book-image" src="<%= book.image_url %>"/>
+      <h2 class="book-title"><%= book.title %></h2>
+      <h3 class="book-author"><%= book.author %></h3>
+      <p><%= book.description %></p>
+    </div>
   </section>
-
