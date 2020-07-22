@@ -22,7 +22,7 @@ client.on('error', error => {
 // middleware
 app.use(express.static('./public'));
 app.use(express.urlencoded({extended: true}));
-app.set('view engine', 'ejs'); 
+app.set('view engine', 'ejs');
 
 
 app.get('/', renderHomePage);
@@ -30,6 +30,7 @@ app.get('/searches/new', renderSearchPage);
 app.post('/searches', collectSearchResults);
 app.get('/error', handleErrors);
 app.get('/books/:id', getOneBook);
+app.post('/addbook', addBookToFavorites);
 
 // functions
 
@@ -78,6 +79,7 @@ function collectSearchResults(request, response){
         return new Book(book.volumeInfo);
       });
 
+      console.log('this is our final book array', finalBookArray);
       response.render('pages/searches/show.ejs', {searchResults: finalBookArray})
     }).catch((error) => {
       console.log('ERROR', error);
@@ -91,6 +93,26 @@ function handleErrors(request, response){
   response.render('pages/error.ejs')
 }
 
+function addBookToFavorites(request, response){
+  console.log('this is my form data from my add to favs', request.body);
+
+  //take the info from the form
+
+  let { author, title, image, description} = request.body;
+  //add it to the database
+
+  let sql = 'INSERT INTO books (author, title, image_url, description) VALUES ($1, $2, $3, $4) RETURNING id;';
+
+  let safeValues = [author, title, image, description];
+
+  client.query(sql, safeValues)
+    .then(results => {
+      console.log('sql results', results.rows[0].id);
+      let id = results.rows[0].id;
+      response.status(200).redirect(`/books/${id}`);
+    })
+  //redirect ot the detail page
+}
 
 
 function Book(obj){
