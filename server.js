@@ -39,7 +39,8 @@ function renderHomePage(request, response){
   client.query(sql)
     .then(results => {
       let books = results.rows;
-      response.render('pages/index.ejs', {saved: books});
+      console.log('this is books', books);
+      response.render('pages/index.ejs', {book:books});
     })
 }
 
@@ -57,7 +58,7 @@ function getOneBook(request, response){
       console.log('This is the book I selected:', results.rows);
       let selectedBook = results.rows[0];
 
-      response.render('pages/books/show.ejs', {bookSelection:selectedBook});
+      response.render('pages/books/show.ejs', {book:selectedBook});
     })
 }
 
@@ -68,13 +69,13 @@ function collectSearchResults(request, response){
   let url = 'https://www.googleapis.com/books/v1/volumes?q=';
 
   if(category === 'title'){url += `+intitle:${query}`}
-  if(category === 'author'){url += `+inauthor:${category}`}
+  if(category === 'author'){url += `+inauthor:${query}`}
 
 
   superagent.get(url)
     .then(results => {
       let bookArray = results.body.items;
-
+      // console.log('the magic book ARRAY', bookArray);
       const finalBookArray = bookArray.map(book => {
         return new Book(book.volumeInfo);
       });
@@ -98,12 +99,12 @@ function addBookToFavorites(request, response){
 
   //take the info from the form
 
-  let { author, title, image, description} = request.body;
+  let { author, title, isbn, image, description} = request.body;
   //add it to the database
 
-  let sql = 'INSERT INTO books (author, title, image_url, description) VALUES ($1, $2, $3, $4) RETURNING id;';
+  let sql = 'INSERT INTO books (author, title, isbn, image_url, description) VALUES ($1, $2, $3, $4, $5) RETURNING id;';
 
-  let safeValues = [author, title, image, description];
+  let safeValues = [author, title, isbn, image, description];
 
   client.query(sql, safeValues)
     .then(results => {
@@ -119,8 +120,8 @@ function Book(obj){
   this.title = obj.title ? obj.title : 'no title available';
   this.author = obj.authors ? obj.authors[0] : 'no author available';
   this.description = obj.description ? obj.description : 'no description available';
-  this.image = obj.imageLinks ? obj.imageLinks.thumbnail.replace(/^(http:\/\/)/g, 'https://') : 'https://i.imgur.com/J5LVHEL.jpg';
-  this.isbn = obj.industryIdentifiers ? obj.industryIdentifiers.type + obj.industryIdentifiers.identifier : 'no ISBN available';
+  this.image_url = obj.imageLinks ? obj.imageLinks.thumbnail.replace(/^(http:\/\/)/g, 'https://') : 'https://i.imgur.com/J5LVHEL.jpg';
+  this.isbn = obj.industryIdentifiers ? (obj.industryIdentifiers[0].type + obj.industryIdentifiers[0].identifier) : 'no ISBN available';
   this.bookshelf = [];
 }
 

@@ -16,13 +16,9 @@
     </header>
     <section class="main-page">
       <% let counter = 0; %>
-      <% saved.forEach( book => { %>
-        <div class="book-container">
-          <img class="book-image" src="<%= book.image_url %>"/>
-          <h2 class="book-title"><%= book.title %></h2>
-          <h3 class="book-author"><%= book.author %></h3>
-          <a href="/books/<%= book.id%>">View Details</a>
-        </div>
+      <% book.forEach( book => { %>
+        <%- include('./books/detail.ejs', {book:book}) %>
+        <a href="/books/<%= book.id%>">View Details</a>
         <% counter++; %>
         <% }) %>
         <span class="counter">Total saved books <%= counter %></span>
