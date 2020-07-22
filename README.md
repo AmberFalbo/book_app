@@ -105,6 +105,115 @@ Number and name of feature: #2 Single Detail View
 
 Estimate of time needed to complete: 1hr
 
+Day 2: 4:28pm - 8:20pm
+
+Day 3: 1:20pm - 3:34pm
+
+Actual time needed to complete: 6hrs
+
+Number and name of feature: #3 add new books
+
+Estimate of time needed to complete: 1hr
+
+*Completed while working on Feature #2
+
+Number and name of feature: #4 Consistency 
+
+Estimate of time needed to complete: 1hr
+
+Start time: 3:36pm
+
+Finish time: _____
+
+Actual time needed to complete: _____
+
+Number and name of feature: #2 Single Detail View
+
+Estimate of time needed to complete: 1hr
+
+Start time: 4:28pm
+
+Finish time: _____
+
+Actual time needed to complete: _____
+
+Number and name of feature: #2 Single Detail View
+
+Estimate of time needed to complete: 1hr
+
+Start time: 4:28pm
+
+Finish time: _____
+
+Actual time needed to complete: _____
+
+Number and name of feature: #2 Single Detail View
+
+Estimate of time needed to complete: 1hr
+
+Start time: 4:28pm
+
+Finish time: _____
+
+Actual time needed to complete: _____
+Number and name of feature: #2 Single Detail View
+
+Estimate of time needed to complete: 1hr
+
+Start time: 4:28pm
+
+Finish time: _____
+
+Actual time needed to complete: _____
+Number and name of feature: #2 Single Detail View
+
+Estimate of time needed to complete: 1hr
+
+Start time: 4:28pm
+
+Finish time: _____
+
+Actual time needed to complete: _____
+Number and name of feature: #2 Single Detail View
+
+Estimate of time needed to complete: 1hr
+
+Start time: 4:28pm
+
+Finish time: _____
+
+Actual time needed to complete: _____
+Number and name of feature: #2 Single Detail View
+
+Estimate of time needed to complete: 1hr
+
+Start time: 4:28pm
+
+Finish time: _____
+
+Actual time needed to complete: _____
+Number and name of feature: #2 Single Detail View
+
+Estimate of time needed to complete: 1hr
+
+Start time: 4:28pm
+
+Finish time: _____
+
+Actual time needed to complete: _____
+Number and name of feature: #2 Single Detail View
+
+Estimate of time needed to complete: 1hr
+
+Start time: 4:28pm
+
+Finish time: _____
+
+Actual time needed to complete: _____
+Number and name of feature: #2 Single Detail View
+
+Estimate of time needed to complete: 1hr
+
 Start time: 4:28pm
 
 Finish time: _____
