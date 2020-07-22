@@ -10,14 +10,16 @@
   <title>Book Collection</title>
 </head>
 <body>
-  <main id=results>
+  <section class="main-page">
     <% searchResults.forEach( book => { %>
-      <img src="<%= book.image %>"/>
-      <h2><%= book.title %></h2>
-      <h3><%= book.author %></h3>
-      <p><%= book.description %></p>
+      <div class="book-container">
+        <img class="book-image" src="<%= book.image %>"/>
+        <h2 class="book-title" ><%= book.title %></h2>
+        <h3 class="book-author" ><%= book.author %></h3>
+        <p><%= book.description %></p>
+      </div>
    <% }) %>
-  </main>
+    </section>
   
 </body>
 </html>
