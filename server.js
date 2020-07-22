@@ -29,7 +29,7 @@ app.get('/', renderHomePage);
 app.get('/searches/new', renderSearchPage);
 app.post('/searches', collectSearchResults);
 app.get('/error', handleErrors);
-
+app.get('/books/:id', getOneBook);
 
 // functions
 
@@ -44,6 +44,20 @@ function renderHomePage(request, response){
 
 function renderSearchPage(request, response){
   response.render('pages/searches/new.ejs')
+}
+
+function getOneBook(request, response){
+  let id = request.params.id;
+  let sql = 'SELECT * FROM books WHERE id=$1;';
+  let safeValues = [id];
+
+  client.query(sql, safeValues)
+    .then(results => {
+      console.log('This is the book I selected:', results.rows);
+      let selectedBook = results.rows[0];
+
+      response.render('pages/books/show.ejs', {bookSelection:selectedBook});
+    })
 }
 
 function collectSearchResults(request, response){
@@ -84,6 +98,8 @@ function Book(obj){
   this.author = obj.authors ? obj.authors[0] : 'no author available';
   this.description = obj.description ? obj.description : 'no description available';
   this.image = obj.imageLinks ? obj.imageLinks.thumbnail.replace(/^(http:\/\/)/g, 'https://') : 'https://i.imgur.com/J5LVHEL.jpg';
+  this.isbn = obj.industryIdentifiers ? obj.industryIdentifiers.type + obj.industryIdentifiers.identifier : 'no ISBN available';
+  this.bookshelf = [];
 }
 
 client.connect()

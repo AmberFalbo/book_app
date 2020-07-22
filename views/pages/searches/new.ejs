@@ -11,7 +11,8 @@
 </head>
 <body>
   <main id=form>
-    <h4>Search by Title or Author</h4>
+    <div class="book-container">
+      <h4>Search by Title or Author</h4>
     <form action="/searches" method="post">
       <input id=textBox type="text" name="search" placeholder="Enter a title or author" required>
       <fieldset>
@@ -28,6 +29,7 @@
       </fieldset>
       <button type="submit">Search the Google Books API</button>
     </form>
+  </div>
   </main>
 </body>
 </html>
