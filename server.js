@@ -22,7 +22,7 @@ client.on('error', error => {
 // middleware
 app.use(express.static('./public'));
 app.use(express.urlencoded({extended: true}));
-app.set('view engine', 'ejs'); 
+app.set('view engine', 'ejs');
 
 
 app.get('/', renderHomePage);

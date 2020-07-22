@@ -21,6 +21,7 @@
           <img class="book-image" src="<%= book.image_url %>"/>
           <h2 class="book-title"><%= book.title %></h2>
           <h3 class="book-author"><%= book.author %></h3>
+          <a href="/books/<%= book.id%>">View Details</a>
         </div>
         <% counter++; %>
         <% }) %>
