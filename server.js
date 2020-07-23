@@ -7,6 +7,7 @@ require('dotenv').config();
 const pg = require('pg');
 require('ejs');
 const superagent = require('superagent');
+const methodOverride = require('method-override');
 
 // setting the view engine
 app.set('view engine', 'ejs');
@@ -23,14 +24,17 @@ client.on('error', error => {
 app.use(express.static('./public'));
 app.use(express.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
+app.use(methodOverride('_method'));
 
-
+// routes
 app.get('/', renderHomePage);
 app.get('/searches/new', renderSearchPage);
 app.post('/searches', collectSearchResults);
 app.get('/error', handleErrors);
 app.get('/books/:id', getOneBook);
 app.post('/addbook', addBookToFavorites);
+app.put('/update/:id', updateBook);
+app.delete('/delete/:id', deleteBook);
 
 // functions
 
@@ -99,12 +103,12 @@ function addBookToFavorites(request, response){
 
   //take the info from the form
 
-  let { author, title, isbn, image, description} = request.body;
+  let { author, title, isbn, image_url, description} = request.body;
   //add it to the database
 
   let sql = 'INSERT INTO books (author, title, isbn, image_url, description) VALUES ($1, $2, $3, $4, $5) RETURNING id;';
 
-  let safeValues = [author, title, isbn, image, description];
+  let safeValues = [author, title, isbn, image_url, description];
 
   client.query(sql, safeValues)
     .then(results => {
@@ -113,6 +117,34 @@ function addBookToFavorites(request, response){
       response.status(200).redirect(`/books/${id}`);
     })
   //redirect ot the detail page
+}
+
+function updateBook(request, response) {
+  let id = request.params.id;
+
+  let { author, title, isbn, image_url, description, bookshelf} = request.body;
+  console.log('request.body LOGGGGGG', request.body);
+  let sql = 'UPDATE books SET author=$1, title=$2, isbn=$3, image_url=$4, description=$5, bookshelf=$6 WHERE id=$7;';
+  let safeValues =[author, title, isbn, image_url, description, bookshelf, id];
+
+  client.query(sql, safeValues)
+    .then(() => {
+      response.status(200).redirect('/');
+    })
+
+}
+
+function deleteBook(request, response) {
+  let id = request.params.id;
+
+  let sql = 'DELETE FROM books WHERE id=$1;';
+
+  let safeValues =[id]
+
+  client.query(sql, safeValues)
+    .then(() => {
+      response.status(200).redirect('/');
+    })
 }
 
 
