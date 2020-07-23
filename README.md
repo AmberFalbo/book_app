@@ -145,19 +145,21 @@ Estimate of time needed to complete: 1hr
 
 Start time: 4:30pm
 
-Finish time: _____
+Finish time: 5:30
 
-Actual time needed to complete: _____
+Actual time needed to complete: 1hr
 
-Number and name of feature: #2 Single Detail View
+Number and name of feature: #2 Delete Button
 
 Estimate of time needed to complete: 1hr
 
-Start time: 4:28pm
+Start time: 5:30pm
 
-Finish time: _____
+Finish time: 6:37pm
 
-Actual time needed to complete: _____
+Actual time needed to complete: 1hr 7 minutes
+
+
 Number and name of feature: #2 Single Detail View
 
 Estimate of time needed to complete: 1hr
