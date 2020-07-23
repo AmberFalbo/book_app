@@ -12,6 +12,10 @@
       <span class="bookshelf">Bookshelf: <%= book.bookshelf %></span>
       <a href="/books/<%= book.id%>">View Details</a>    
     </section>
+    <%- include('./edit.ejs') %>
+    <form action="/delete/<%= book.id %>?_method=DELETE" method="post">
+    <button type="submit">Delete This Book</button>
+    </form>
   </main>
 </body>
 </html>

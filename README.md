@@ -123,25 +123,27 @@ Estimate of time needed to complete: 1hr
 
 Start time: 3:36pm
 
-Finish time: _____
+Finish time: 4:10
+
+Actual time needed to complete: 34 minutes
+
+Number and name of feature: #5 Day 2 CSS
+
+Estimate of time needed to complete: 
+
+Start time: 
+
+Finish time: 
 
 Actual time needed to complete: _____
 
-Number and name of feature: #2 Single Detail View
+Day 3
+
+Number and name of feature: #1 Update Details
 
 Estimate of time needed to complete: 1hr
 
-Start time: 4:28pm
-
-Finish time: _____
-
-Actual time needed to complete: _____
-
-Number and name of feature: #2 Single Detail View
-
-Estimate of time needed to complete: 1hr
-
-Start time: 4:28pm
+Start time: 4:30pm
 
 Finish time: _____
 
